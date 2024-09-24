@@ -11,11 +11,17 @@ type Props = {
     password?: boolean;
     filled?: boolean;
     icon?: IconDefinition;
+    onEnter?: () => void;
 }
 
-export const Input = ({ placeholder, password, icon, filled, onChange, value }: Props) => {
+export const Input = ({ placeholder, password, icon, filled, onChange, value, onEnter }: Props) => {
 
     const [showPassword, setShowPassword] = useState(false);
+    const handleKeyUp = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        if (event.code.toLowerCase() === 'enter' && onEnter) {
+            onEnter();
+        }
+    }
 
 
 
@@ -31,6 +37,7 @@ export const Input = ({ placeholder, password, icon, filled, onChange, value }: 
                 placeholder={placeholder}
                 value={value}
                 onChange={e => onChange && onChange(e.target.value)}
+                onKeyUp={handleKeyUp}
             />
 
             {password &&
