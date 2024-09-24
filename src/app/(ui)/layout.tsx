@@ -1,5 +1,6 @@
 import { NavItem } from "@/components/nav/nav-item";
 import { NavLogout } from "@/components/nav/nav-logout";
+import { NavMyProfile } from "@/components/nav/nav-myprofile";
 import { Logo } from "@/components/ui/logo";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
@@ -32,6 +33,7 @@ export default function Layout({ children }: Props) {
 
                 <div className="mb-6 flex flex-col gap-4">
                     <NavLogout />
+                    <NavMyProfile />
                 </div>
             </section>
 
