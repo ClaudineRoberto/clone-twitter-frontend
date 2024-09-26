@@ -1,5 +1,5 @@
-"use client";
 
+import { ProfileFeed } from "@/components/profile/profile-feed";
 import { Button } from "@/components/ui/button";
 import { GeneralHeader } from "@/components/ui/general-header";
 import { user } from "@/data/user";
@@ -9,7 +9,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 export default function Page() {
-    const [isMe, setIsMe] = useState(true);
+    const isMe = true;
 
     return (
         <div>
@@ -56,6 +56,7 @@ export default function Page() {
                     </div>
                 </div>
             </section>
+            <ProfileFeed />
         </div>
     );
 }
