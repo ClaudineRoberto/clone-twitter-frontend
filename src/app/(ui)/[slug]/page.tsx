@@ -6,7 +6,6 @@ import { user } from "@/data/user";
 import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
-import { useState } from "react";
 
 export default function Page() {
     const isMe = true;
@@ -15,7 +14,7 @@ export default function Page() {
         <div>
             <GeneralHeader backHref="/">
                 <div className="font-bold text-lg">{user.name}</div>
-                <div className="text-xs text-gray-500">{user.postCount}</div>
+                <div className="text-xs text-gray-500">{user.postCount} Posts</div>
             </GeneralHeader>
             <section className="border-b-2 border-gray-900">
 
